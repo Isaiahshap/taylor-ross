@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaPhone, FaClock, FaBalanceScale } from 'react-icons/fa';
+import { FaPhone, FaClock, FaBalanceScale, FaBars } from 'react-icons/fa';
+import MobileMenu from './MobileMenu';
 
 const benefits = [
   {
@@ -26,13 +27,29 @@ const CaseEvaluation: React.FC = () => {
     triggerOnce: true,
     threshold: 0.1
   });
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <section className="relative py-24 bg-gradient-to-b from-law-red via-law-red to-black">
+    <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-b from-law-red via-law-red to-black">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30" />
       <div className="absolute inset-0 bg-[url('/pattern.png')] mix-blend-overlay opacity-10" />
       
-      <div className="relative container mx-auto px-6 max-w-7xl">
+      {/* Menu Toggle Button - Now visible on all screens */}
+      <button
+        onClick={() => setIsMobileMenuOpen(true)}
+        className="fixed bottom-6 right-6 z-40 bg-law-red text-white p-4 rounded-full shadow-lg hover:bg-black transition-colors duration-300 group"
+      >
+        <FaBars className="text-2xl group-hover:scale-110 transition-transform duration-300" />
+      </button>
+
+      {/* Slide-in Menu */}
+      <MobileMenu 
+        isOpen={isMobileMenuOpen} 
+        onClose={() => setIsMobileMenuOpen(false)} 
+      />
+
+      {/* Main Content */}
+      <div className="relative container mx-auto px-4 sm:px-6 max-w-7xl">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -40,10 +57,10 @@ const CaseEvaluation: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-6xl md:text-7xl font-display uppercase text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display uppercase text-white mb-6">
             Get Your <span className="text-black">Free</span> Case Review
           </h2>
-          <p className="text-white text-xl max-w-3xl mx-auto font-body">
+          <p className="text-white text-lg sm:text-xl max-w-3xl mx-auto font-body">
             Don't wait. Every moment matters in personal injury cases. Contact us now for your 
             free consultation with our experienced attorneys.
           </p>

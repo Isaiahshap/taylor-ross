@@ -2,80 +2,72 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Navbar from '../components/Navbar/Navbar';
-import { FaCar, FaUserInjured, FaHospital, FaHardHat, FaBalanceScale, FaHeartbeat } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
 
 const practiceAreas = [
   {
-    icon: FaCar,
-    title: "AUTO ACCIDENTS",
-    description: "Aggressive representation for victims of car, truck, and motorcycle accidents.",
-    details: [
-      "Car & Truck Accidents",
-      "Motorcycle Accidents",
-      "Pedestrian Injuries",
-      "Rideshare Accidents",
-      "Commercial Vehicle Crashes"
-    ]
+    title: "Car Accidents",
+    description: "Expert representation for victims of auto accidents, including multi-vehicle collisions, drunk driving incidents, and rideshare accidents.",
+    image: "/images/car-accident.jpg",
+    link: "/practice-areas/car-accidents",
+    stats: ["$15.5M Highest Settlement", "98% Success Rate", "2,500+ Cases Won"]
   },
   {
-    icon: FaUserInjured,
-    title: "PERSONAL INJURY",
-    description: "Fighting for maximum compensation in slip and fall and premises liability cases.",
-    details: [
-      "Slip & Fall Accidents",
-      "Premises Liability",
-      "Dog Bites",
-      "Product Liability",
-      "Catastrophic Injuries"
-    ]
+    title: "Truck Accidents",
+    description: "Specialized handling of commercial truck accidents, dealing with complex regulations and multiple liable parties.",
+    image: "/images/truck-accident.jpg",
+    link: "/practice-areas/truck-accidents",
+    stats: ["$12.8M Highest Settlement", "25+ Years Experience", "Federal Regulation Experts"]
   },
   {
-    icon: FaHospital,
-    title: "MEDICAL MALPRACTICE",
-    description: "Holding negligent healthcare providers accountable for their mistakes.",
-    details: [
-      "Surgical Errors",
-      "Misdiagnosis",
-      "Birth Injuries",
-      "Medication Errors",
-      "Hospital Negligence"
-    ]
+    title: "Medical Malpractice",
+    description: "Fighting for victims of medical negligence, including surgical errors, misdiagnosis, and medication mistakes.",
+    image: "/images/medical-malpractice.jpg",
+    link: "/practice-areas/medical-malpractice",
+    stats: ["$18.2M Highest Settlement", "300+ Healthcare Cases", "Expert Medical Network"]
   },
   {
-    icon: FaHardHat,
-    title: "WORKPLACE INJURIES",
-    description: "Protecting workers' rights and securing compensation for on-the-job injuries.",
-    details: [
-      "Construction Accidents",
-      "Industrial Accidents",
-      "Workers' Compensation",
-      "OSHA Violations",
-      "Third-Party Claims"
-    ]
+    title: "Workplace Injuries",
+    description: "Protecting workers' rights in construction accidents, industrial injuries, and occupational illness cases.",
+    image: "/images/workplace-injury.jpg",
+    link: "/practice-areas/workplace-injuries",
+    stats: ["$9.5M Highest Settlement", "1,000+ Workers Helped", "OSHA Compliance Experts"]
   },
   {
-    icon: FaBalanceScale,
-    title: "WRONGFUL DEATH",
-    description: "Seeking justice and compensation for families who lost loved ones.",
-    details: [
-      "Fatal Accidents",
-      "Medical Negligence",
-      "Workplace Fatalities",
-      "Product Defects",
-      "Criminal Acts"
-    ]
+    title: "Slip & Fall",
+    description: "Representing victims of premises liability incidents, ensuring property owners are held accountable.",
+    image: "/images/slip-and-fall.jpg",
+    link: "/practice-areas/slip-and-fall",
+    stats: ["$4.2M Highest Settlement", "95% Success Rate", "Fast Resolution Focus"]
   },
   {
-    icon: FaHeartbeat,
-    title: "CATASTROPHIC INJURIES",
-    description: "Dedicated advocacy for life-changing injury victims and their families.",
-    details: [
-      "Brain Injuries",
-      "Spinal Cord Injuries",
-      "Severe Burns",
-      "Amputations",
-      "Multiple Trauma"
-    ]
+    title: "Product Liability",
+    description: "Taking on manufacturers of defective products that cause injury or harm to consumers.",
+    image: "/images/product-liability.jpg",
+    link: "/practice-areas/product-liability",
+    stats: ["$11.3M Highest Settlement", "National Cases Handled", "Industry-Leading Experts"]
+  },
+  {
+    title: "Wrongful Death",
+    description: "Compassionate representation for families who have lost loved ones due to negligence or misconduct.",
+    image: "/images/wrongful-death.jpg",
+    link: "/practice-areas/wrongful-death",
+    stats: ["$21.5M Highest Settlement", "100+ Families Helped", "Dedicated Support Team"]
+  },
+  {
+    title: "Motorcycle Accidents",
+    description: "Specialized advocacy for motorcycle riders, understanding their unique challenges and rights.",
+    image: "/images/motorcycle-accident.jpg",
+    link: "/practice-areas/motorcycle-accidents",
+    stats: ["$8.7M Highest Settlement", "500+ Riders Helped", "Biker Rights Advocates"]
+  },
+  {
+    title: "Brain & Spinal Injuries",
+    description: "Expert handling of catastrophic injuries requiring long-term care and substantial compensation.",
+    image: "/images/brain-injury.jpg",
+    link: "/practice-areas/catastrophic-injuries",
+    stats: ["$25.1M Highest Settlement", "Life-Care Planning", "Medical Expert Network"]
   }
 ];
 
@@ -103,8 +95,8 @@ const PracticeAreas: React.FC = () => {
                 Practice <span className="text-law-red">Areas</span>
               </h1>
               <p className="text-white/80 text-xl max-w-3xl mx-auto font-body">
-                Our experienced attorneys handle a wide range of personal injury cases, 
-                fighting tirelessly to secure the compensation our clients deserve.
+                Decades of experience fighting for victims' rights across all areas of personal injury law.
+                Explore our practice areas to learn how we can help you.
               </p>
             </motion.div>
 
@@ -116,36 +108,45 @@ const PracticeAreas: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="group relative bg-black p-8 border-l-8 border-law-red hover:border-l-12 transition-all duration-300"
+                  className="group relative overflow-hidden bg-black border border-white/10"
                 >
-                  <div className="relative z-10 flex flex-col items-start">
-                    <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                      <area.icon className="text-5xl text-law-red group-hover:text-white transition-colors duration-300" />
-                    </div>
-
-                    <div className="space-y-4">
-                      <h3 className="text-2xl font-display text-white group-hover:text-law-red transition-colors duration-300 uppercase tracking-wider">
-                        {area.title}
-                      </h3>
-                      
-                      <div className="w-16 h-1 bg-law-red group-hover:w-24 transition-all duration-300" />
-                      
-                      <p className="text-white/80 font-body leading-relaxed mb-6">
-                        {area.description}
-                      </p>
-
-                      <ul className="space-y-2">
-                        {area.details.map((detail, i) => (
-                          <li key={i} className="text-white/60 font-body flex items-center">
-                            <span className="w-1.5 h-1.5 bg-law-red rounded-full mr-2" />
-                            {detail}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                  {/* Image Container */}
+                  <div className="relative h-64 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-10" />
+                    <img
+                      src={area.image}
+                      alt={area.title}
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    />
                   </div>
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-law-red/5 blur-3xl group-hover:bg-law-red/10 transition-all duration-700" />
-                  <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-black blur-2xl" />
+
+                  {/* Content */}
+                  <div className="relative p-8">
+                    <h3 className="text-2xl font-display text-white mb-4 group-hover:text-law-red transition-colors duration-300">
+                      {area.title}
+                    </h3>
+                    <p className="text-white/70 mb-6">
+                      {area.description}
+                    </p>
+
+                    {/* Stats */}
+                    <div className="grid grid-cols-1 gap-2 mb-6">
+                      {area.stats.map((stat, i) => (
+                        <div key={i} className="text-sm text-white/60 flex items-center">
+                          <span className="w-1.5 h-1.5 bg-law-red rounded-full mr-2" />
+                          {stat}
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Link */}
+                    <Link
+                      to={area.link}
+                      className="inline-flex items-center gap-2 text-law-red hover:text-white transition-colors duration-300"
+                    >
+                      Learn More <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
+                    </Link>
+                  </div>
                 </motion.div>
               ))}
             </div>
