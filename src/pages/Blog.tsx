@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchPosts } from '../services/api';
-import Layout from '../components/Layout';
+import Navbar from '../components/Navbar/Navbar';
 
 interface WPPost {
   id: number;
@@ -25,12 +25,14 @@ const Blog: React.FC = () => {
   }, []);
 
   return (
-    <Layout>
-      <section className="py-12 px-6">
-        <h1 className="text-3xl font-bold mb-8">Blog</h1>
-        {loading && <p>Loading posts...</p>}
-        {!loading && posts.length === 0 && <p>No posts found.</p>}
-        <div className="space-y-8">
+    <div className="min-h-screen bg-black">
+      <Navbar />
+      <main>
+        <section className="py-12 px-6">
+          <h1 className="text-3xl font-bold mb-8">Blog</h1>
+          {loading && <p>Loading posts...</p>}
+          {!loading && posts.length === 0 && <p>No posts found.</p>}
+          <div className="space-y-8">
           {posts.map((post) => (
             <article key={post.id} className="bg-law-blue p-6 rounded text-law-white">
               <h2
@@ -42,9 +44,10 @@ const Blog: React.FC = () => {
               />
             </article>
           ))}
-        </div>
-      </section>
-    </Layout>
+          </div>
+        </section>
+      </main>
+    </div>
   );
 };
 

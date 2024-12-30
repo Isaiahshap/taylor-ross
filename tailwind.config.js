@@ -7,20 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        'law-navy': '#0B1426',      // Deeper, richer navy
-        'law-accent': '#C8102E',    // Bold crimson red
-        'law-accent-hover': '#A50D25',
-        'law-gold': '#B8860B',      // Deeper, regal gold
-        'law-gold-light': '#D4AF37', // Lighter gold for accents
-        'law-white': '#FFFFFF',     
-        'law-gray': '#1A1A1A',      // Darker gray
-        'law-slate': '#1F2937',
-        'law-gradient-start': '#0B1426',
-        'law-gradient-end': '#1F2937',
+        'law-red': '#E31837',
+        'law-dark': '#0A0A0A',
+        'law-light': '#F5F5F5',
+        'law-accent': '#CC1631',
+        'law-gold': '#D4AF37',
       },
       fontFamily: {
-        'display': ['Cormorant Garamond', 'serif'], // More sophisticated serif
-        'body': ['Montserrat', 'sans-serif'],       // Modern, clean sans-serif
+        display: ['Teko', 'sans-serif'],
+        body: ['Roboto', 'sans-serif'],
       },
       boxShadow: {
         'sharp': '6px 6px 0px rgba(184, 134, 11, 0.3)',

@@ -1,13 +1,21 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import Navbar from '../components/Navbar/Navbar';
 import Hero from '../components/Hero/Hero';
+import WhyChooseUs from '../components/WhyChooseUs/WhyChooseUs';
+import ResultsAndPractice from '../components/ResultsAndPractice/ResultsAndPractice';
+import CaseEvaluation from '../components/CaseEvaluation/CaseEvaluation';
 
 const Home: React.FC = () => {
   return (
-    <Layout>
-      <Hero />
-      {/* Other sections */}
-    </Layout>
+    <div className="min-h-screen bg-black">
+      <Navbar />
+      <main>
+        <Hero />
+        <WhyChooseUs />
+        <ResultsAndPractice />
+        <CaseEvaluation />
+      </main>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Layout from '../components/Layout';
+import Navbar from '../components/Navbar/Navbar';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -15,10 +15,12 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <Layout>
-      <section className="py-24 px-6 max-w-2xl mx-auto">
-        <h1 className="text-5xl font-display font-bold mb-12 text-law-gold">Contact Us</h1>
-        <form onSubmit={handleSubmit} className="space-y-6">
+    <div className="min-h-screen bg-black">
+      <Navbar />
+      <main>
+        <section className="py-24 px-6 max-w-2xl mx-auto">
+          <h1 className="text-5xl font-display font-bold mb-12 text-law-gold">Contact Us</h1>
+          <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="name" className="block mb-2 font-semibold text-law-white">Name</label>
             <input
@@ -61,9 +63,10 @@ const Contact: React.FC = () => {
           >
             Send Message
           </button>
-        </form>
-      </section>
-    </Layout>
+          </form>
+        </section>
+      </main>
+    </div>
   );
 };
 
