@@ -26,6 +26,7 @@ export default {
       borderWidth: {
         '3': '3px',
         '6': '6px',
+        '12': '12px',
       },
       animation: {
         'gradient': 'gradient 8s ease infinite',
@@ -45,7 +46,11 @@ export default {
           '0%, 100%': { transform: 'scale(1.05)' },
           '50%': { transform: 'scale(1)' },
         }
-      }
+      },
+      transitionProperty: {
+        'width': 'width',
+        'border': 'border-width',
+      },
     },
   },
   plugins: [],

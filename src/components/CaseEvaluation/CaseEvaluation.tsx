@@ -28,8 +28,9 @@ const CaseEvaluation: React.FC = () => {
   });
 
   return (
-    <section className="relative py-24 bg-gradient-to-br from-law-red via-law-accent to-black">
-      <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-10" />
+    <section className="relative py-24 bg-gradient-to-b from-law-red via-law-red to-black">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30" />
+      <div className="absolute inset-0 bg-[url('/pattern.png')] mix-blend-overlay opacity-10" />
       
       <div className="relative container mx-auto px-6 max-w-7xl">
         <motion.div

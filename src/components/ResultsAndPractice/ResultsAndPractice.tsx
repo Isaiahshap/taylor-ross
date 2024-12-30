@@ -65,9 +65,9 @@ const ResultsAndPractice: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { amount: "$15.5M", type: "Medical Malpractice", desc: "Settlement for surgical error victim" },
-              { amount: "$8.2M", type: "Auto Accident", desc: "Verdict for catastrophically injured driver" },
-              { amount: "$12.1M", type: "Wrongful Death", desc: "Settlement for grieving family" }
+              { amount: "$15.5M", type: "MEDICAL\nMALPRACTICE", desc: "Settlement for surgical error victim" },
+              { amount: "$8.2M", type: "AUTO\nACCIDENT", desc: "Verdict for catastrophically injured driver" },
+              { amount: "$12.1M", type: "WRONGFUL\nDEATH", desc: "Settlement for grieving family" }
             ].map((result, index) => (
               <motion.div
                 key={result.type}
@@ -76,19 +76,20 @@ const ResultsAndPractice: React.FC = () => {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="group relative overflow-hidden"
               >
-                <div className="relative bg-gradient-to-br from-black to-law-dark/90 p-10 border-l-[6px] border-law-red hover:border-l-[12px] transition-all duration-500">
+                <div className="relative bg-law-red min-h-[320px] p-10 border-l-[6px] border-black hover:border-l-[12px] transition-all duration-500">
                   <div className="relative z-10">
-                    <div className="text-8xl font-display font-bold text-law-red mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-7xl font-display font-bold text-black mb-4 group-hover:scale-105 transition-transform duration-300">
                       {result.amount}
                     </div>
-                    <div className="text-2xl text-white font-display uppercase tracking-[0.2em] mb-3">
+                    <div className="text-2xl text-black font-display uppercase tracking-[0.2em] mb-3 whitespace-pre-line">
                       {result.type}
                     </div>
-                    <p className="text-white/70 font-body text-lg">
+                    <p className="text-black/80 font-body text-lg">
                       {result.desc}
                     </p>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-law-red/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-black/10 blur-3xl group-hover:bg-black/20 transition-all duration-700" />
+                  <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-law-red blur-2xl" />
                 </div>
               </motion.div>
             ))}
@@ -97,36 +98,90 @@ const ResultsAndPractice: React.FC = () => {
       </section>
 
       {/* Practice Areas Section */}
-      <section className="relative py-24 bg-law-dark">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl md:text-6xl font-display uppercase text-white mb-6">
-              Practice <span className="text-law-red">Areas</span>
-            </h2>
-            <p className="text-white/80 text-xl max-w-3xl mx-auto font-body">
-              We specialize in fighting for victims of negligence across multiple practice areas.
-            </p>
-          </motion.div>
+      <section className="relative">
+        {/* Top black section */}
+        <div className="bg-black py-24 pb-20">
+          <div className="container mx-auto px-6 max-w-7xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-5xl md:text-6xl font-display uppercase text-white mb-6">
+                Practice <span className="text-law-red">Areas</span>
+              </h2>
+              <p className="text-white/80 text-xl max-w-3xl mx-auto font-body">
+                We specialize in fighting for victims of negligence across multiple practice areas.
+              </p>
+            </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {practiceAreas.map((area, index) => (
-              <motion.div
-                key={area.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group bg-black p-8 border-l-4 border-law-red hover:bg-law-red/10 transition-all duration-300"
-              >
-                <area.icon className="text-law-red text-4xl mb-6" />
-                <h3 className="text-xl font-display text-white mb-4 uppercase">{area.title}</h3>
-                <p className="text-white/70 font-body leading-relaxed">{area.description}</p>
-              </motion.div>
-            ))}
+            {/* Top three cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {practiceAreas.slice(0, 3).map((area, index) => (
+                <motion.div
+                  key={area.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="group relative bg-law-red p-8 border-l-8 border-black hover:border-l-12 transition-all duration-300"
+                >
+                  <div className="relative z-10 flex flex-col items-start">
+                    <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                      <area.icon className="text-5xl text-black group-hover:text-white transition-colors duration-300" />
+                    </div>
+
+                    <div className="space-y-4">
+                      <h3 className="text-2xl font-display text-black group-hover:text-white transition-colors duration-300 uppercase tracking-wider">
+                        {area.title}
+                      </h3>
+                      
+                      <div className="w-16 h-1 bg-black group-hover:w-24 transition-all duration-300" />
+                      
+                      <p className="text-black/90 font-body leading-relaxed">
+                        {area.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom red section */}
+        <div className="bg-law-red py-24 pt-6 -mt-12"> {/* Negative margin to create overlap */}
+          <div className="container mx-auto px-6 max-w-7xl">
+            {/* Bottom three cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {practiceAreas.slice(3).map((area, index) => (
+                <motion.div
+                  key={area.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.4, delay: (index + 3) * 0.1 }}
+                  className="group relative bg-black p-8 border-l-8 border-law-red hover:border-l-12 transition-all duration-300"
+                >
+                  <div className="relative z-10 flex flex-col items-start">
+                    <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                      <area.icon className="text-5xl text-law-red group-hover:text-white transition-colors duration-300" />
+                    </div>
+
+                    <div className="space-y-4">
+                      <h3 className="text-2xl font-display text-white group-hover:text-law-red transition-colors duration-300 uppercase tracking-wider">
+                        {area.title}
+                      </h3>
+                      
+                      <div className="w-16 h-1 bg-law-red group-hover:w-24 transition-all duration-300" />
+                      
+                      <p className="text-white/90 font-body leading-relaxed">
+                        {area.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -134,4 +189,4 @@ const ResultsAndPractice: React.FC = () => {
   );
 }
 
-export default ResultsAndPractice; 
+export default ResultsAndPractice;
