@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPhone, FaClock, FaBalanceScale, FaTimes } from 'react-icons/fa';
 
@@ -26,6 +26,18 @@ const benefits = [
 ];
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [formData, setFormData] = useState({ name: '', phone: '' });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setShowSuccess(true);
+    setFormData({ name: '', phone: '' }); // Reset form
+    setTimeout(() => {
+      setShowSuccess(false);
+    }, 3000); // Hide message after 3 seconds
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -83,15 +95,19 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               </div>
 
               {/* Quick Contact Form */}
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <input
                   type="text"
                   placeholder="Your Name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full bg-white/10 border border-white/20 p-4 text-white placeholder-white/50 focus:outline-none focus:border-white"
                 />
                 <input
                   type="tel"
                   placeholder="Phone Number"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full bg-white/10 border border-white/20 p-4 text-white placeholder-white/50 focus:outline-none focus:border-white"
                 />
                 <button
@@ -100,6 +116,20 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                 >
                   Get Free Consultation
                 </button>
+
+                {/* Success Message */}
+                <AnimatePresence>
+                  {showSuccess && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0 }}
+                      className="bg-green-500 text-white p-4 rounded-md text-center"
+                    >
+                      Thank you! We'll contact you shortly.
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </form>
             </div>
           </motion.div>

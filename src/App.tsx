@@ -21,6 +21,10 @@ import TestimonialsResults from './pages/results/TestimonialsResults';
 import SettlementTimeline from './pages/results/SettlementTimeline';
 import NotableVictories from './pages/results/NotableVictories';
 import PracticeAreaResults from './pages/results/PracticeAreaResults';
+import OurStory from './pages/about/OurStory';
+import Attorneys from './pages/about/Attorneys';
+import CommunityImpact from './pages/about/CommunityImpact';
+import NewsMedia from './pages/about/NewsMedia';
 
 
 function App() {
@@ -31,6 +35,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
+        <Route path="/about/our-story" element={<OurStory />} />
+        <Route path="/about/attorneys" element={<Attorneys />} />
+        <Route path="/about/community" element={<CommunityImpact />} />
+        <Route path="/about/news" element={<NewsMedia />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/practice-areas" element={<PracticeAreas />} />
         <Route path="/practice-areas/car-accidents" element={<CarAccidents />} />

@@ -65,10 +65,19 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-xl font-display text-white mb-6 uppercase">Practice Areas</h4>
             <ul className="space-y-4">
-              {['Auto Accidents', 'Personal Injury', 'Medical Malpractice', 'Workplace Injuries', 'Wrongful Death'].map((area) => (
-                <li key={area}>
-                  <FooterLink to={`/practice-areas/${area.toLowerCase().replace(/\s+/g, '-')}`}>
-                    {area}
+              {[
+                { name: 'Car Accidents', path: '/practice-areas/car-accidents' },
+                { name: 'Medical Malpractice', path: '/practice-areas/medical-malpractice' },
+                { name: 'Truck Accidents', path: '/practice-areas/truck-accidents' },
+                { name: 'Workplace Injuries', path: '/practice-areas/workplace-injuries' },
+                { name: 'Motorcycle Accidents', path: '/practice-areas/motorcycle-accidents' },
+                { name: 'Catastrophic Injuries', path: '/practice-areas/catastrophic-injuries' },
+                { name: 'Wrongful Death', path: '/practice-areas/wrongful-death' },
+                { name: 'Brain & Spinal Injuries', path: '/practice-areas/brain-and-spinal-injuries' }
+              ].map((area) => (
+                <li key={area.name}>
+                  <FooterLink to={area.path}>
+                    {area.name}
                   </FooterLink>
                 </li>
               ))}
@@ -79,10 +88,20 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-xl font-display text-white mb-6 uppercase">Quick Links</h4>
             <ul className="space-y-4">
-              {['About Us', 'Results', 'Blog', 'Testimonials', 'Contact'].map((link) => (
-                <li key={link}>
-                  <FooterLink to={`/${link.toLowerCase().replace(/\s+/g, '-')}`}>
-                    {link}
+              {[
+                { name: 'About', path: '/about' },
+                { name: 'Our Story', path: '/about/our-story' },
+                { name: 'Attorneys', path: '/about/attorneys' },
+                { name: 'Community Impact', path: '/about/community' },
+                { name: 'News & Media', path: '/about/news' },
+                { name: 'Results', path: '/results' },
+                { name: 'Case Results', path: '/results/case-results' },
+                { name: 'Testimonials', path: '/results/testimonials' },
+                { name: 'Contact', path: '/contact' }
+              ].map((link) => (
+                <li key={link.name}>
+                  <FooterLink to={link.path}>
+                    {link.name}
                   </FooterLink>
                 </li>
               ))}

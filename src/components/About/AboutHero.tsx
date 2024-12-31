@@ -1,16 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaTrophy } from 'react-icons/fa';
+import { FaBalanceScale } from 'react-icons/fa';
 
-interface ResultsHeroProps {
+interface AboutHeroProps {
   title: string;
   subtitle: string;
   description: string;
   stats?: Array<{ label: string; value: string }>;
-  inView: boolean;
 }
 
-const ResultsHero: React.FC<ResultsHeroProps> = ({ 
+const AboutHero: React.FC<AboutHeroProps> = ({ 
   title, 
   subtitle, 
   description, 
@@ -18,9 +17,8 @@ const ResultsHero: React.FC<ResultsHeroProps> = ({
 }) => {
   return (
     <section className="relative min-h-[85vh] flex items-center bg-black pt-24 pb-36 md:pt-32 md:pb-44">
-      {/* Background remains the same */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5" />
+        <div className="absolute inset-0 bg-[url('/about-pattern.png')] opacity-5" />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-law-red/10 via-transparent to-transparent opacity-40" />
       </div>
@@ -32,7 +30,6 @@ const ResultsHero: React.FC<ResultsHeroProps> = ({
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          {/* Title and description remain the same */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -63,7 +60,6 @@ const ResultsHero: React.FC<ResultsHeroProps> = ({
             {description}
           </motion.p>
 
-          {/* Updated Stats Grid with automatic animations */}
           {stats && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {stats.map((stat, index) => (
@@ -74,7 +70,6 @@ const ResultsHero: React.FC<ResultsHeroProps> = ({
                   transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}
                   className="group relative bg-black border-2 border-law-red p-8 overflow-hidden"
                 >
-                  {/* Background animation */}
                   <div className="absolute inset-0 bg-gradient-to-r from-law-red/0 via-law-red/5 to-law-red/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                   
                   <div className="relative flex flex-col items-center">
@@ -84,7 +79,7 @@ const ResultsHero: React.FC<ResultsHeroProps> = ({
                       transition={{ duration: 0.2, delay: 0.8 + index * 0.1 }}
                       className="mb-4"
                     >
-                      <FaTrophy className="text-law-red text-3xl group-hover:scale-125 transition-transform duration-200" />
+                      <FaBalanceScale className="text-law-red text-3xl group-hover:scale-125 transition-transform duration-200" />
                     </motion.div>
                     <span className="font-display text-5xl font-bold text-law-red mb-3 group-hover:scale-110 transition-transform duration-200">
                       {stat.value}
@@ -103,4 +98,4 @@ const ResultsHero: React.FC<ResultsHeroProps> = ({
   );
 };
 
-export default ResultsHero; 
+export default AboutHero; 
