@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
   const [videoError, setVideoError] = useState(false);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-24 md:pt-32">
+    <section className="relative min-h-screen flex items-center pt-24 pb-24 md:pt-32 md:pb-32">
       {/* Background Video or Fallback */}
       <div className="absolute inset-0 bg-black">
         {!videoError ? (

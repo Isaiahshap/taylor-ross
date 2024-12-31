@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaLinkedinIn, FaArrowRight } from 'react-icons/fa';
+import { useMemo } from 'react';
 
 const FooterLink: React.FC<{ to: string; children: React.ReactNode }> = ({ to, children }) => (
   <Link
@@ -15,25 +16,32 @@ const FooterLink: React.FC<{ to: string; children: React.ReactNode }> = ({ to, c
 );
 
 const Footer: React.FC = () => {
+  const { pathname } = useLocation();
+  
+  // Memoize the check to prevent unnecessary re-renders
+  const showCTA = useMemo(() => pathname !== '/contact', [pathname]);
+
   return (
     <footer className="relative bg-black">
-      {/* Top Red Bar */}
-      <div className="bg-law-red py-12">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <h3 className="text-4xl md:text-5xl font-display text-white uppercase">
-              Ready to Fight for Your Rights?
-            </h3>
-            <Link
-              to="/contact"
-              className="group flex items-center gap-3 bg-black px-8 py-4 text-white font-display text-xl uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300"
-            >
-              Free Consultation
-              <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
-            </Link>
+      {/* Top Red Bar - Hidden on Contact page */}
+      {showCTA && (
+        <div className="bg-law-red py-12">
+          <div className="container mx-auto px-6 max-w-7xl">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <h3 className="text-4xl md:text-5xl font-display text-white uppercase">
+                Ready to Fight for Your Rights?
+              </h3>
+              <Link
+                to="/contact"
+                className="group flex items-center gap-3 bg-black px-8 py-4 text-white font-display text-xl uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300"
+              >
+                Free Consultation
+                <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 max-w-7xl py-20">

@@ -73,23 +73,20 @@ const ResultsAndPractice: React.FC = () => {
                 key={result.type}
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="group relative overflow-hidden"
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="group relative bg-black p-8 border-l-8 border-law-red hover:border-l-12 transition-all duration-300"
               >
-                <div className="relative bg-law-red min-h-[320px] p-10 border-l-[6px] border-black hover:border-l-[12px] transition-all duration-500">
-                  <div className="relative z-10">
-                    <div className="text-7xl font-display font-bold text-black mb-4 group-hover:scale-105 transition-transform duration-300">
-                      {result.amount}
-                    </div>
-                    <div className="text-2xl text-black font-display uppercase tracking-[0.2em] mb-3 whitespace-pre-line">
-                      {result.type}
-                    </div>
-                    <p className="text-black/80 font-body text-lg">
-                      {result.desc}
-                    </p>
+                <div className="relative z-10 flex flex-col items-start">
+                  <div className="text-5xl md:text-6xl font-display text-law-red mb-4">
+                    {result.amount}
                   </div>
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-black/10 blur-3xl group-hover:bg-black/20 transition-all duration-700" />
-                  <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-law-red blur-2xl" />
+                  <div className="text-xl font-display text-white uppercase mb-3 whitespace-pre-line">
+                    {result.type}
+                  </div>
+                  <div className="w-16 h-1 bg-law-red group-hover:w-24 transition-all duration-300 mb-3" />
+                  <p className="text-white/70 font-body">
+                    {result.desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
