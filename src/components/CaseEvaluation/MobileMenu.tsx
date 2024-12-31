@@ -210,7 +210,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ delay: 0.5 + index * 0.1 }}
+                      className="flex items-start gap-3"
                     >
+                      <img src="/logo.png" alt="Taylor & Ross Logo" className="h-8 w-auto -mt-0.5" />
                       <benefit.icon className="text-white text-3xl mb-4" />
                     </motion.div>
                     <h3 className="text-xl font-display text-white mb-2">

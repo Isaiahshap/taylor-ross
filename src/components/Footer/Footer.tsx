@@ -122,6 +122,7 @@ const Footer: React.FC = () => {
                 { name: 'Case Results', path: '/results/case-results' },
                 { name: 'Testimonials', path: '/results/testimonials' },
                 { name: 'Contact', path: '/contact' },
+                { name: 'Blog', path: '/blog' },
                 { name: 'Privacy Policy', path: '/privacy-policy' },
                 { name: 'Terms of Service', path: '/terms-of-service' },
                 { name: 'Disclaimer', path: '/disclaimer' }

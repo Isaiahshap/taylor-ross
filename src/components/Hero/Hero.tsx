@@ -2,6 +2,34 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import CTAButton from '../common/CTAButton';
 import ResultCard from './ResultCard';
+import { Link } from 'react-router-dom';
+
+const resultCards = [
+  { 
+    amount: "$15.5M", 
+    type: "Medical Malpractice",
+    href: "/practice-areas/medical-malpractice",
+    delay: 0.3
+  },
+  { 
+    amount: "$8.2M", 
+    type: "Auto Accident",
+    href: "/practice-areas/car-accidents",
+    delay: 0.4
+  },
+  { 
+    amount: "$12.1M", 
+    type: "Wrongful Death",
+    href: "/practice-areas/wrongful-death",
+    delay: 0.5
+  },
+  { 
+    amount: "$9.8M", 
+    type: "Workplace Injury",
+    href: "/practice-areas/workplace-injuries",
+    delay: 0.6
+  }
+];
 
 const Hero: React.FC = () => {
   const [videoError, setVideoError] = useState(false);
@@ -54,50 +82,52 @@ const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Show ResultCards in a 2x2 grid on mobile/tablet, hidden on larger screens */}
+          {/* Mobile/Tablet Stats */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="block lg:hidden"
           >
-            <div className="grid grid-cols-2 gap-4 sm:gap-6">
-              {[
-                { amount: "$15.5M", type: "Medical Malpractice" },
-                { amount: "$8.2M", type: "Auto Accident" },
-                { amount: "$12.1M", type: "Wrongful Death" },
-                { amount: "$9.8M", type: "Workplace Injury" }
-              ].map((result, index) => (
-                <ResultCard
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              {resultCards.map((result) => (
+                <Link 
                   key={result.type}
-                  amount={result.amount}
-                  type={result.type}
-                  delay={index * 0.1}
-                />
+                  to={result.href}
+                  className="group cursor-pointer"
+                >
+                  <ResultCard
+                    amount={result.amount}
+                    type={result.type}
+                    delay={result.delay}
+                    isMobile={true}
+                  />
+                </Link>
               ))}
             </div>
           </motion.div>
 
-          {/* Original desktop ResultCards */}
+          {/* Desktop Stats */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="hidden lg:block"
           >
             <div className="grid grid-cols-2 gap-6">
-              {[
-                { amount: "$15.5M", type: "Medical Malpractice" },
-                { amount: "$8.2M", type: "Auto Accident" },
-                { amount: "$12.1M", type: "Wrongful Death" },
-                { amount: "$9.8M", type: "Workplace Injury" }
-              ].map((result, index) => (
-                <ResultCard
+              {resultCards.map((result) => (
+                <Link 
                   key={result.type}
-                  amount={result.amount}
-                  type={result.type}
-                  delay={index * 0.1}
-                />
+                  to={result.href}
+                  className="group cursor-pointer"
+                >
+                  <ResultCard
+                    amount={result.amount}
+                    type={result.type}
+                    delay={result.delay}
+                    isMobile={false}
+                  />
+                </Link>
               ))}
             </div>
           </motion.div>

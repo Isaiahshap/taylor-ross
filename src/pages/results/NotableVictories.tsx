@@ -7,7 +7,6 @@ import PracticeAreaStats from '../../components/Results/PracticeAreaStats';
 import StatsCard from '../../components/Results/StatsCard';
 import CaseEvaluation from '../../components/CaseEvaluation/CaseEvaluation';
 import { motion } from 'framer-motion';
-import { FaTrophy } from 'react-icons/fa';
 
 const NotableVictories: React.FC = () => {
   const [ref, inView] = useInView({
@@ -127,47 +126,31 @@ const NotableVictories: React.FC = () => {
 
           {/* Content Container */}
           <div className="container mx-auto px-6 max-w-7xl relative z-10">
-            <div className="flex flex-col items-center text-center mb-16">
-              <motion.div
-                initial={{ scale: 0.95 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.3 }}
-                className="mb-6"
+            <h2 className="text-5xl md:text-6xl font-display uppercase mb-12 flex flex-col items-center text-center">
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-white relative inline-block"
               >
-                <FaTrophy className="text-law-red text-5xl" />
-              </motion.div>
-              <h2 className="text-6xl md:text-8xl font-display uppercase mb-6 flex flex-col items-center">
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="text-white relative inline-block"
-                >
-                  Victory
-                  <motion.div 
-                    initial={{ width: 0 }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
-                    className="absolute -bottom-2 left-0 h-2 bg-law-red"
-                  />
-                </motion.span>
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  className="text-black relative inline-block group"
-                >
-                  Metrics
-                  <div className="absolute -inset-x-4 -inset-y-2 bg-law-red/5 scale-0 group-hover:scale-100 transition-transform duration-300" />
-                </motion.span>
-              </h2>
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: "6rem" }}
-                transition={{ duration: 0.8, delay: 1 }}
-                className="h-1 bg-law-red"
-              />
-            </div>
+                Victory
+                <motion.div 
+                  initial={{ width: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                  className="absolute -bottom-2 left-0 h-1 bg-white/30"
+                />
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-black relative inline-block group"
+              >
+                Metrics
+                <div className="absolute -inset-x-4 -inset-y-2 bg-white/5 scale-0 group-hover:scale-100 transition-transform duration-300" />
+              </motion.span>
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {victoryStats.map((stat, index) => (
                 <StatsCard

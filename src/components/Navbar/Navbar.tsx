@@ -34,11 +34,6 @@ const practiceAreasDropdown: DropdownItem[] = [
     link: "/practice-areas/workplace-injuries"
   },
   {
-    title: "Product Liability",
-    description: "Hold manufacturers accountable",
-    link: "/practice-areas/product-liability"
-  },
-  {
     title: "Wrongful Death",
     description: "Compassionate representation for families",
     link: "/practice-areas/wrongful-death"
@@ -52,7 +47,13 @@ const practiceAreasDropdown: DropdownItem[] = [
     title: "Brain & Spinal Injuries",
     description: "Expert catastrophic injury handling",
     link: "/practice-areas/catastrophic-injuries"
+  },
+  {
+    title: "Product Liability",
+    description: "Hold manufacturers accountable",
+    link: "/practice-areas/product-liability"
   }
+
 ];
 
 const resultsDropdown: DropdownItem[] = [
@@ -112,6 +113,12 @@ const aboutDropdown = [
     description: "Latest updates, press releases, and media coverage",
     link: "/about/news",
     highlight: "Featured Stories"
+  },
+  {
+    title: "Blog",
+    description: "Stay informed with our latest legal insights",
+    link: "/blog",
+    highlight: "Latest Articles"
   }
 ];
 
@@ -141,8 +148,9 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <span className="text-4xl md:text-5xl font-display font-bold text-white tracking-[-0.02em]">
+          <Link to="/" className="flex items-start gap-3">
+            <img src="/logo.png" alt="Taylor & Ross Logo" className="h-8 w-auto -mt-.5" />
+            <span className="text-3xl md:text-4xl font-display font-bold text-white tracking-[-0.02em]">
               <span className="[text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000]">TAYLOR</span>{' '}
               <span className="text-law-red [text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000]">&#38;</span>{' '}
               <span className="[text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000]">ROSS</span>
@@ -152,7 +160,7 @@ const Navbar: React.FC = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(true)}
-            className="md:hidden text-white p-2"
+            className="xl:hidden text-white p-2"
           >
             <svg
               className="w-6 h-6"
@@ -170,7 +178,7 @@ const Navbar: React.FC = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-12">
+          <div className="hidden xl:flex items-center space-x-12">
             {/* Practice Areas Dropdown */}
             <div 
               className="relative"

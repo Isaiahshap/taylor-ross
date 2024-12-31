@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
+import VictoryCard from '../Results/VictoryCard';
 import { FaCar, FaUserInjured, FaHospital, FaHardHat, FaBalanceScale, FaHeartbeat } from 'react-icons/fa';
 
 const practiceAreas = [
@@ -36,6 +38,27 @@ const practiceAreas = [
   }
 ];
 
+const recentVictories = [
+  { 
+    amount: "$15.5M", 
+    type: "Medical Malpractice", 
+    desc: "Surgical error resulting in brain damage",
+    href: "/practice-areas/medical-malpractice"
+  },
+  { 
+    amount: "$12.1M", 
+    type: "Wrongful Death", 
+    desc: "Construction site negligence",
+    href: "/practice-areas/wrongful-death"
+  },
+  { 
+    amount: "$9.8M", 
+    type: "Workplace Injury", 
+    desc: "Industrial accident compensation",
+    href: "/practice-areas/workplace-injuries"
+  }
+];
+
 const ResultsAndPractice: React.FC = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -68,36 +91,23 @@ const ResultsAndPractice: React.FC = () => {
             {/* Black gradient edges */}
             <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent" />
             <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent" />
-            <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black to-transparent" />
             
             {/* Cards container */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
-              {practiceAreas.slice(0, 3).map((area, index) => (
-                <motion.div
-                  key={area.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="group relative bg-law-red p-8 border-l-8 border-black hover:border-l-12 transition-all duration-300"
+              {recentVictories.map((victory, index) => (
+                <Link
+                  key={victory.type}
+                  to={victory.href}
+                  className="group cursor-pointer"
                 >
-                  <div className="relative z-10 flex flex-col items-start">
-                    <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                      <area.icon className="text-5xl text-black group-hover:text-white transition-colors duration-300" />
-                    </div>
-
-                    <div className="space-y-4">
-                      <h3 className="text-2xl font-display text-black group-hover:text-white transition-colors duration-300 uppercase tracking-wider">
-                        {area.title}
-                      </h3>
-                      
-                      <div className="w-16 h-1 bg-black group-hover:w-24 transition-all duration-300" />
-                      
-                      <p className="text-black/90 font-body leading-relaxed">
-                        {area.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
+                  <VictoryCard
+                    amount={victory.amount}
+                    type={victory.type}
+                    desc={victory.desc}
+                    index={index}
+                    inView={inView}
+                  />
+                </Link>
               ))}
             </div>
           </div>

@@ -26,7 +26,11 @@ import NewsMedia from './pages/about/NewsMedia';
 import Disclaimer from './pages/Disclaimer';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
-
+import Blog from './pages/Blog';
+import MedicalMalpracticeBlog from './pages/MedicalMalpracticeBlog';  
+import TruckAccidentsBlog from './pages/TruckAccidentsBlog';
+import WorkplaceSafetyBlog from './pages/WorkplaceSafetyBlog';
+import ProductLiability from './pages/practice-areas/ProductLiability';
 
 function App() {
   return (
@@ -58,6 +62,11 @@ function App() {
         <Route path="/disclaimer" element={<Disclaimer />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/medical-malpractice" element={<MedicalMalpracticeBlog />} />
+        <Route path="/blog/truck-accidents" element={<TruckAccidentsBlog />} />
+        <Route path="/blog/workplace-safety" element={<WorkplaceSafetyBlog />} />
+        <Route path="/practice-areas/product-liability" element={<ProductLiability />} />
       </Routes>
       <Footer />
     </Router>
