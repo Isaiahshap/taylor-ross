@@ -60,30 +60,36 @@ const practiceAreasDropdown: DropdownItem[] = [
   }
 ];
 
-const resultsDropdown = [
-  {
+const resultsDropdown: DropdownItem[] = [
+    {
     title: "Case Results",
     description: "View our track record of multi-million dollar victories",
     link: "/results/case-results",
-    highlight: "$100M+ Recovered"
+    highlight: "$15.5M Highest Recovery"
+  },
+  {
+    title: "Practice Area Results",
+    description: "Results broken down by practice area",
+    link: "/results/practice-area-results",
+    highlight: "6+ Practice Areas"
+  },
+  {
+    title: "Notable Victories",
+    description: "Our biggest wins and landmark cases",
+    link: "/results/notable-victories",
+    highlight: "Recent Major Wins"
+  },
+  {
+    title: "Settlement Timeline",
+    description: "Understanding our proven approach to compensation",
+    link: "/results/settlement-timeline",
+    highlight: "8.5 Month Avg. Time"
   },
   {
     title: "Client Testimonials",
     description: "Read what our satisfied clients have to say",
     link: "/results/testimonials",
     highlight: "500+ 5-Star Reviews"
-  },
-  {
-    title: "Notable Victories",
-    description: "Explore our biggest wins and landmark cases",
-    link: "/results/notable-victories",
-    highlight: "Featured Cases"
-  },
-  {
-    title: "Settlement Timeline",
-    description: "Understanding the journey to maximum compensation",
-    link: "/results/settlement-process",
-    highlight: "Process Overview"
   }
 ];
 
