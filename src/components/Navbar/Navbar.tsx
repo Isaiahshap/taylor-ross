@@ -34,11 +34,6 @@ const practiceAreasDropdown: DropdownItem[] = [
     link: "/practice-areas/workplace-injuries"
   },
   {
-    title: "Slip & Fall",
-    description: "Premises liability expertise",
-    link: "/practice-areas/slip-and-fall"
-  },
-  {
     title: "Product Liability",
     description: "Hold manufacturers accountable",
     link: "/practice-areas/product-liability"
@@ -148,7 +143,9 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <span className="text-4xl md:text-5xl font-display font-bold text-white tracking-[-0.02em]">
-              TAYLOR <span className="text-law-red">&</span> ROSS
+              <span className="[text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000]">TAYLOR</span>{' '}
+              <span className="text-law-red [text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000]">&#38;</span>{' '}
+              <span className="[text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000]">ROSS</span>
             </span>
           </Link>
 
@@ -183,14 +180,14 @@ const Navbar: React.FC = () => {
               <div className="flex justify-center items-center space-x-1">
                 <Link 
                   to="/practice-areas" 
-                  className="text-white hover:text-law-red transition-colors font-display tracking-wide"
+                  className="text-white hover:text-law-red transition-colors font-display tracking-wide [text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000]"
                 >
                   PRACTICE AREAS
                 </Link>
                 <motion.div
                   animate={{ rotate: showDropdown ? 0 : 180 }}
                   transition={{ duration: 0.2 }}
-                  className="text-law-red"
+                  className="text-law-red [text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000]"
                 >
                   <FaArrowRight className="rotate-90 text-xs" />
                 </motion.div>
@@ -214,14 +211,14 @@ const Navbar: React.FC = () => {
               <div className="flex justify-center items-center space-x-1">
                 <Link 
                   to="/results" 
-                  className="text-white hover:text-law-red transition-colors font-display tracking-wide"
+                  className="text-white hover:text-law-red transition-colors font-display tracking-wide [text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000]"
                 >
                   RESULTS
                 </Link>
                 <motion.div
                   animate={{ rotate: showResultsDropdown ? 0 : 180 }}
                   transition={{ duration: 0.2 }}
-                  className="text-law-red"
+                  className="text-law-red [text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000]"
                 >
                   <FaArrowRight className="rotate-90 text-xs" />
                 </motion.div>
@@ -245,14 +242,14 @@ const Navbar: React.FC = () => {
               <div className="flex justify-center items-center space-x-1">
                 <Link 
                   to="/about" 
-                  className="text-white hover:text-law-red transition-colors font-display tracking-wide"
+                  className="text-white hover:text-law-red transition-colors font-display tracking-wide [text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000]"
                 >
                   ABOUT
                 </Link>
                 <motion.div
                   animate={{ rotate: showAboutDropdown ? 0 : 180 }}
                   transition={{ duration: 0.2 }}
-                  className="text-law-red"
+                  className="text-law-red [text-shadow:_-1px_-1px_0_#000,_1px_-1px_0_#000,_-1px_1px_0_#000,_1px_1px_0_#000]"
                 >
                   <FaArrowRight className="rotate-90 text-xs" />
                 </motion.div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { FaStar, FaQuoteLeft, FaAward, FaHandshake } from 'react-icons/fa';
+import { FaStar, FaQuoteLeft } from 'react-icons/fa';
 import Navbar from '../../components/Navbar/Navbar';
 import ResultsHero from '../../components/Results/ResultsHero';
 import StatsCard from '../../components/Results/StatsCard';
@@ -59,50 +59,60 @@ const TestimonialsResults: React.FC = () => {
         />
 
         {/* Featured Testimonials */}
-        <section className="relative py-24 bg-law-red" ref={ref}>
-          <div className="container mx-auto px-6 max-w-7xl">
-            <h2 className="text-4xl font-display text-black uppercase mb-12">
-              Client <span className="text-white">Stories</span>
+        <section className="relative py-24 bg-gradient-to-r from-[#E31837] via-[#8B0000] to-black" ref={ref}>
+          {/* Background Pattern & Gradients */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-[url('/pattern.png')] mix-blend-overlay opacity-10" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30" />
+            
+            {/* Full-width black edge gradients */}
+            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent" />
+            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent" />
+            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent" />
+          </div>
+
+          <div className="container mx-auto px-6 max-w-7xl relative z-10">
+            <h2 className="text-4xl font-display text-white uppercase mb-12">
+              Client <span className="text-black">Stories</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {featuredTestimonials.map((testimonial, index) => (
+              {featuredTestimonials.map((testimonial) => (
                 <div 
                   key={testimonial.client}
-                  className="bg-black p-8 group hover:bg-black/90 transition-all duration-500 border-l-8 border-law-red hover:border-l-[12px] relative overflow-hidden h-full"
+                  className="bg-black p-8 group border-l-4 border-law-red relative overflow-hidden h-full"
                 >
-                  {/* Background Gradient Animation */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-law-red/0 via-law-red/5 to-law-red/0 group-hover:translate-x-full duration-1000 transition-transform ease-in-out" />
+                  {/* Background Gradient Animation - Subtle sweep */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-law-red/0 via-law-red/2 to-law-red/0 group-hover:translate-x-full duration-2000 transition-transform ease-in-out" />
                   
                   {/* Content Container */}
                   <div className="relative z-10 flex flex-col h-full">
-                    {/* Top Section - Fixed Height */}
+                    {/* Top Section */}
                     <div className="flex justify-between items-start h-[40px]">
                       {/* Quote Icon */}
-                      
-                      <div className="text-law-red transform-gpu group-hover:scale-110 transition-all duration-500 ease-out">
+                      <div className="text-law-red">
                         <FaQuoteLeft className="text-4xl" />
                       </div>
                       
                       {/* Rating Stars */}
                       <div className="flex space-x-1">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <FaStar key={i} className="text-law-red transform-gpu group-hover:scale-110 transition-all duration-500" />
+                          <FaStar key={i} className="text-law-red" />
                         ))}
                       </div>
                     </div>
 
-                    {/* Quote Section - Fixed Height */}
+                    {/* Quote Section */}
                     <div className="h-[180px] my-6">
                       <p className="text-white/80 text-lg italic leading-relaxed line-clamp-5">
                         "{testimonial.quote}"
                       </p>
                     </div>
 
-                    {/* Bottom Section - Fixed Height */}
+                    {/* Bottom Section */}
                     <div className="h-[100px]">
-                      {/* Client Info */}
                       <div className="mb-6">
-                        <h3 className="text-xl font-display text-white group-hover:text-law-red transition-colors duration-500 line-clamp-1">
+                        <h3 className="text-xl font-display text-white group-hover:text-law-red transition-colors duration-700 line-clamp-1">
                           {testimonial.client}
                         </h3>
                         <p className="text-law-red font-display text-sm mt-2 line-clamp-1">
@@ -111,8 +121,8 @@ const TestimonialsResults: React.FC = () => {
                       </div>
 
                       {/* Animated underline */}
-                      <div className="h-1 bg-law-red/50 group-hover:bg-law-red transition-all duration-500">
-                        <div className="h-full w-0 group-hover:w-full bg-law-red transition-all duration-700 ease-out" />
+                      <div className="h-0.5 bg-law-red/30 group-hover:bg-law-red/40 transition-all duration-700">
+                        <div className="h-full w-0 group-hover:w-full bg-law-red transition-all duration-1000 ease-out" />
                       </div>
                     </div>
                   </div>

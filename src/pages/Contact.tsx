@@ -6,7 +6,7 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import ContactForm from '../components/Contact/ContactForm';
 
 const Contact: React.FC = () => {
-  const [ref, inView] = useInView({
+  const [ref] = useInView({
     triggerOnce: true,
     threshold: 0.1
   });
@@ -36,8 +36,9 @@ const Contact: React.FC = () => {
     <div className="min-h-screen bg-black">
       <Navbar />
       <main>
-        <section className="relative pt-32 pb-24">
+        <section className="relative pt-32 pb-24 bg-gradient-to-b from-[#E31837] via-[#8B0000] to-black">
           <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30" />
           <div className="container mx-auto px-6 max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -46,7 +47,7 @@ const Contact: React.FC = () => {
               className="text-center mb-16"
             >
               <h1 className="text-6xl md:text-7xl font-display uppercase text-white mb-6">
-                Contact <span className="text-law-red">Us</span>
+                Contact <span className="text-black">Us</span>
               </h1>
               <p className="text-white/80 text-xl max-w-3xl mx-auto font-body">
                 Get in touch with our experienced legal team for a free consultation about your case.

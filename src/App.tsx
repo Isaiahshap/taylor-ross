@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ScrollToTop } from './utils/ScrollToTop';
 import Home from './pages/Home';
@@ -24,6 +23,9 @@ import OurStory from './pages/about/OurStory';
 import Attorneys from './pages/about/Attorneys';
 import CommunityImpact from './pages/about/CommunityImpact';
 import NewsMedia from './pages/about/NewsMedia';
+import Disclaimer from './pages/Disclaimer';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 
 function App() {
@@ -53,6 +55,9 @@ function App() {
         <Route path="/results/settlement-timeline" element={<SettlementTimeline />} />
         <Route path="/results/notable-victories" element={<NotableVictories />} />
         <Route path="/results/practice-area-results" element={<PracticeAreaResults />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
       </Routes>
       <Footer />
     </Router>

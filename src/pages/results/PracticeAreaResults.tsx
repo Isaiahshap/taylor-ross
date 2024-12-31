@@ -7,6 +7,8 @@ import VictoryCard from '../../components/Results/VictoryCard';
 import PracticeAreaStats from '../../components/Results/PracticeAreaStats';
 import StatsCard from '../../components/Results/StatsCard';
 import CaseEvaluation from '../../components/CaseEvaluation/CaseEvaluation';
+import ResultsContent from '../../components/Results/ResultsContent';
+import { motion } from 'framer-motion';
 
 const PracticeAreaResults: React.FC = () => {
   const [ref, inView] = useInView({
@@ -66,6 +68,20 @@ const PracticeAreaResults: React.FC = () => {
     { label: "Client Satisfaction", value: "4.9/5" }
   ];
 
+  const practiceAreaContent = [
+    "Taylor & Ross Law Firm has established itself as a leader across multiple practice areas, with specialized expertise that has resulted in record-breaking settlements and verdicts. Our focused approach to each practice area allows us to maximize results for our clients through deep understanding of specific legal challenges and requirements.",
+
+    "In Medical Malpractice, our team has secured over $150 million in recoveries, including our landmark $15.5 million settlement for a surgical error victim. Our success in these complex cases stems from our close relationships with medical experts and deep understanding of healthcare standards.",
+
+    "Our Auto Accident practice has recovered more than $100 million for over 2,500 clients. By combining advanced accident reconstruction techniques with aggressive negotiation strategies, we consistently secure settlements well above industry averages, including our recent $8.2 million verdict in a multi-vehicle collision case.",
+
+    "Workplace Injury cases represent a significant portion of our practice, with over $75 million recovered for construction site accidents alone. Our expertise in navigating both workers' compensation and third-party liability claims has resulted in numerous multi-million dollar recoveries.",
+
+    "In Product Liability cases, we've established ourselves as formidable opponents to major manufacturers, securing over $85 million in total recoveries. Our $11.3 million verdict against a medical device manufacturer demonstrates our ability to handle complex technical cases.",
+
+    "Our Wrongful Death practice has secured over $120 million for grieving families, with our attorneys providing both aggressive representation and compassionate support during these difficult cases. Our success rate of 98% across all practice areas reflects our commitment to excellence in every case we handle."
+  ];
+
   return (
     <div className="min-h-screen bg-black">
       <Navbar />
@@ -78,11 +94,29 @@ const PracticeAreaResults: React.FC = () => {
           inView={inView}
         />
 
+        <ResultsContent
+          title="Practice Areas"
+          content={practiceAreaContent}
+          inView={true}
+        />
+
         {/* Practice Areas Grid */}
-        <section className="relative py-24 bg-law-red" ref={ref}>
-          <div className="container mx-auto px-6 max-w-7xl">
-            <h2 className="text-4xl font-display text-black uppercase mb-12">
-              Practice Area <span className="text-white">Expertise</span>
+        <section className="relative py-24 bg-gradient-to-r from-[#E31837] via-[#8B0000] to-black" ref={ref}>
+          {/* Background Pattern & Gradients */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-[url('/pattern.png')] mix-blend-overlay opacity-10" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30" />
+            
+            {/* Full-width black edge gradients */}
+            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent" />
+            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent" />
+            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black to-transparent" />
+          </div>
+
+          <div className="container mx-auto px-6 max-w-7xl relative z-10">
+            <h2 className="text-4xl font-display text-white uppercase mb-12">
+              Practice Area <span className="text-black">Expertise</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {practiceAreas.map((area, index) => (
@@ -121,10 +155,12 @@ const PracticeAreaResults: React.FC = () => {
         </section>
 
         {/* Growth Stats */}
-        <section className="relative py-24 bg-law-red">
-          <div className="container mx-auto px-6 max-w-7xl">
-            <h2 className="text-4xl font-display text-black uppercase mb-12">
-              2023 <span className="text-white">Growth</span>
+        <section className="relative py-24 bg-black">
+          <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black" />
+          <div className="container mx-auto px-6 max-w-7xl relative z-10">
+            <h2 className="text-4xl font-display text-white uppercase mb-12">
+              Practice Area <span className="text-law-red">Growth</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {yearlyGrowth.map((stat, index) => (

@@ -25,15 +25,31 @@ const Footer: React.FC = () => {
     <footer className="relative bg-black">
       {/* Top Red Bar - Hidden on Contact page */}
       {showCTA && (
-        <div className="bg-law-red py-12">
-          <div className="container mx-auto px-6 max-w-7xl">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              <h3 className="text-4xl md:text-5xl font-display text-white uppercase">
-                Ready to Fight for Your Rights?
+        <div className="relative py-8 md:py-12">
+          {/* Red gradient background with black edges */}
+          <div className="absolute inset-0">
+            {/* Center red section */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#E31837] via-[#E31837] to-[#E31837]" />
+            
+            {/* Pattern overlay */}
+            <div className="absolute inset-0 bg-[url('/pattern.png')] mix-blend-overlay opacity-10" />
+            
+            {/* Additional gradients for smoother blending */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30" />
+            
+            {/* Top and bottom gradients only */}
+            <div className="absolute inset-x-0 top-0 h-24 md:h-32 bg-gradient-to-b from-black to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-24 md:h-32 bg-gradient-to-t from-black to-transparent" />
+          </div>
+
+          <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 text-center md:text-left">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-display text-white uppercase drop-shadow-lg max-w-2xl">
+                Ready to Fight for Your <span className="text-white font-bold">Rights</span>?
               </h3>
               <Link
                 to="/contact"
-                className="group flex items-center gap-3 bg-black px-8 py-4 text-white font-display text-xl uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300"
+                className="group w-full md:w-auto flex items-center justify-center gap-3 bg-black/90 px-6 sm:px-8 py-4 text-white font-display text-lg sm:text-xl uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300 shadow-lg"
               >
                 Free Consultation
                 <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
@@ -105,7 +121,10 @@ const Footer: React.FC = () => {
                 { name: 'Results', path: '/results' },
                 { name: 'Case Results', path: '/results/case-results' },
                 { name: 'Testimonials', path: '/results/testimonials' },
-                { name: 'Contact', path: '/contact' }
+                { name: 'Contact', path: '/contact' },
+                { name: 'Privacy Policy', path: '/privacy-policy' },
+                { name: 'Terms of Service', path: '/terms-of-service' },
+                { name: 'Disclaimer', path: '/disclaimer' }
               ].map((link) => (
                 <li key={link.name}>
                   <FooterLink to={link.path}>
@@ -158,7 +177,15 @@ const Footer: React.FC = () => {
         <div className="container mx-auto px-6 max-w-7xl py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-white/50 text-sm">
             <div>
-              © {new Date().getFullYear()} Taylor & Ross Law Firm. All rights reserved.
+              © 2024 Yeshaya.dev. All rights reserved. Built by{' '}
+              <a 
+                href="https://yeshaya.dev" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-law-red hover:text-white transition-colors duration-300"
+              >
+                Yeshaya.dev
+              </a>
             </div>
             <div className="flex gap-6">
               <Link to="/privacy-policy" className="hover:text-law-red transition-colors duration-300">
@@ -169,6 +196,22 @@ const Footer: React.FC = () => {
               </Link>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Legal Disclaimer */}
+      <div className="bg-black/50 border-t border-white/5">
+        <div className="container mx-auto px-6 max-w-7xl py-8">
+          <p className="text-white/40 text-xs leading-relaxed">
+            Case "worth" is determined from the total settlement amount. The settlement amounts shown are gross numbers before attorney's fees and cost deductions. The % fees will be computed before deducting expenses and costs from the gross settlement. No fees or costs with no recovery.
+          </p>
+          <p className="text-white/40 text-xs leading-relaxed mt-4">
+            The information contained in this Website is provided for informational purposes only, and should not be construed as legal advice on any subject matter. The specific results achieved for clients shared on this website do not imply that similar results may be achieved for other clients.{' '}
+            <Link to="/disclaimer" className="text-law-red hover:text-white transition-colors duration-300">
+              Read Our Full Disclaimer
+            </Link>
+            .
+          </p>
         </div>
       </div>
     </footer>

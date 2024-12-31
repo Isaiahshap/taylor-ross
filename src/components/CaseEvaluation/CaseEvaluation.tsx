@@ -95,7 +95,7 @@ const CaseEvaluation: React.FC = () => {
   };
 
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-b from-law-red via-law-red to-black">
+    <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-b from-[#E31837] via-[#8B0000] to-black">
       <AnimatePresence>
         {alert && (
           <Alert

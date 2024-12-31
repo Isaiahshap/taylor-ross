@@ -56,40 +56,50 @@ const ResultsAndPractice: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-5xl md:text-6xl font-display uppercase text-white mb-6">
-              Recent <span className="text-law-red">Victories</span>
+              Notable <span className="text-law-red">Victories</span>
             </h2>
             <p className="text-white/80 text-xl max-w-3xl mx-auto font-body">
               Our track record of success speaks volumes. We've secured millions in compensation for our clients.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { amount: "$15.5M", type: "MEDICAL\nMALPRACTICE", desc: "Settlement for surgical error victim" },
-              { amount: "$8.2M", type: "AUTO\nACCIDENT", desc: "Verdict for catastrophically injured driver" },
-              { amount: "$12.1M", type: "WRONGFUL\nDEATH", desc: "Settlement for grieving family" }
-            ].map((result, index) => (
-              <motion.div
-                key={result.type}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="group relative bg-black p-8 border-l-8 border-law-red hover:border-l-12 transition-all duration-300"
-              >
-                <div className="relative z-10 flex flex-col items-start">
-                  <div className="text-5xl md:text-6xl font-display text-law-red mb-4">
-                    {result.amount}
+          {/* Victory Cards with Black Edges */}
+          <div className="relative">
+            {/* Black gradient edges */}
+            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent" />
+            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent" />
+            <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black to-transparent" />
+            
+            {/* Cards container */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+              {practiceAreas.slice(0, 3).map((area, index) => (
+                <motion.div
+                  key={area.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="group relative bg-law-red p-8 border-l-8 border-black hover:border-l-12 transition-all duration-300"
+                >
+                  <div className="relative z-10 flex flex-col items-start">
+                    <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                      <area.icon className="text-5xl text-black group-hover:text-white transition-colors duration-300" />
+                    </div>
+
+                    <div className="space-y-4">
+                      <h3 className="text-2xl font-display text-black group-hover:text-white transition-colors duration-300 uppercase tracking-wider">
+                        {area.title}
+                      </h3>
+                      
+                      <div className="w-16 h-1 bg-black group-hover:w-24 transition-all duration-300" />
+                      
+                      <p className="text-black/90 font-body leading-relaxed">
+                        {area.description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="text-xl font-display text-white uppercase mb-3 whitespace-pre-line">
-                    {result.type}
-                  </div>
-                  <div className="w-16 h-1 bg-law-red group-hover:w-24 transition-all duration-300 mb-3" />
-                  <p className="text-white/70 font-body">
-                    {result.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
