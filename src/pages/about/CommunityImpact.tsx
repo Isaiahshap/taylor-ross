@@ -54,7 +54,6 @@ const CommunityImpact: React.FC = () => {
           subtitle="Impact"
           description="Making a difference beyond the courtroom through community service, education, and charitable giving."
           stats={heroStats}
-          inView={inView}
         />
 
         {/* Mission Statement */}

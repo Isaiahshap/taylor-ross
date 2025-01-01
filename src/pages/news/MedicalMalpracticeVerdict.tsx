@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Navbar from '../../components/Navbar/Navbar';
-import { FaCalendar, FaUser, FaFolder, FaArrowLeft, FaShare, FaBalanceScale, FaGavel, FaHospital } from 'react-icons/fa';
+import { FaCalendar, FaUser, FaFolder, FaArrowLeft, FaBalanceScale, FaGavel, FaHospital } from 'react-icons/fa';
 import CaseEvaluation from '../../components/CaseEvaluation/CaseEvaluation';
 import { Link } from 'react-router-dom';
 
