@@ -34,7 +34,6 @@ import ProductLiability from './pages/practice-areas/ProductLiability';
 import MartinezSuperLawyers from './pages/news/MartinezSuperLawyers';
 import VeteransProgram from './pages/news/VeteransProgram';
 import MedicalMalpracticeVerdict from "./pages/news/MedicalMalpracticeVerdict";
-import News from "./pages/news/News";
 
 function App() {
   return (
@@ -66,12 +65,11 @@ function App() {
         <Route path="/disclaimer" element={<Disclaimer />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/*" element={<Blog />} />
         <Route path="/blog/medical-malpractice" element={<MedicalMalpracticeBlog />} />
         <Route path="/blog/truck-accidents" element={<TruckAccidentsBlog />} />
         <Route path="/blog/workplace-safety" element={<WorkplaceSafetyBlog />} />
         <Route path="/practice-areas/product-liability" element={<ProductLiability />} />
-        <Route path="/news" element={<News />} />
         <Route path="/news/medical-malpractice-verdict" element={<MedicalMalpracticeVerdict />} />
         <Route path="/news/martinez-super-lawyers" element={<MartinezSuperLawyers />} />
         <Route path="/news/veterans-program" element={<VeteransProgram />} />

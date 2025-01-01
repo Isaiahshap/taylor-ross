@@ -15,7 +15,7 @@ const blogPosts = [
     slug: 'understanding-medical-malpractice-claims',
     title: 'Understanding Medical Malpractice Claims: What Patients Need to Know',
     excerpt: 'Medical malpractice cases are among the most complex areas of personal injury law. Learn about the key elements required to prove negligence and how to protect your rights.',
-    featuredImage: '/blog/medical-malpractice-blog.jpg',
+    featuredImage: '/malpractice.jpg',
     date: '2024-03-15',
     author: 'Sarah Martinez',
     category: 'Medical Malpractice',
@@ -26,7 +26,7 @@ const blogPosts = [
     slug: 'truck-accident-settlements',
     title: 'Recent Changes in Truck Accident Settlements: 2024 Update',
     excerpt: 'New federal regulations and evolving case law are impacting how truck accident cases are settled. Discover what this means for accident victims seeking compensation.',
-    featuredImage: '/blog/truck-accident-blog.jpg',
+    featuredImage: '/truckcrash.jpg',
     date: '2024-03-01',
     author: 'Michael Taylor',
     category: 'Truck Accidents',
@@ -37,7 +37,7 @@ const blogPosts = [
     slug: 'workplace-safety-post-covid',
     title: 'Workplace Safety in the Post-COVID Era: New Legal Considerations',
     excerpt: 'As workplaces continue to evolve, new safety challenges and legal obligations emerge. Learn about recent developments in workplace injury law and prevention.',
-    featuredImage: '/blog/workplace-safety-blog.jpg',
+    featuredImage: '/covid.jpg',
     date: '2024-02-15',
     author: 'Jennifer Ross',
     category: 'Workplace Injuries',
@@ -250,11 +250,11 @@ const BlogList = () => {
 const Blog: React.FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<BlogList />} />
-      <Route path="/understanding-medical-malpractice-claims" element={<MedicalMalpracticeBlog />} />
-      <Route path="/truck-accident-settlements" element={<TruckAccidentsBlog />} />
-      <Route path="/workplace-safety-post-covid" element={<WorkplaceSafetyBlog />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route index element={<BlogList />} />
+      <Route path="understanding-medical-malpractice-claims" element={<MedicalMalpracticeBlog />} />
+      <Route path="truck-accident-settlements" element={<TruckAccidentsBlog />} />
+      <Route path="workplace-safety-post-covid" element={<WorkplaceSafetyBlog />} />
+      <Route path="*" element={<Navigate to="/blog" replace />} />
     </Routes>
   );
 };

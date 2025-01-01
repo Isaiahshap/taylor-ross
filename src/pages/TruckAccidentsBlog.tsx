@@ -19,7 +19,7 @@ const TruckAccidentsBlog: React.FC = () => {
         <section className="relative h-[60vh] min-h-[500px]">
           <div className="absolute inset-0">
             <img
-              src="/blog/truck-accident-blog.jpg"
+              src="/truckcrash.jpg"
               alt="Truck Accident Settlements"
               className="w-full h-full object-cover"
             />

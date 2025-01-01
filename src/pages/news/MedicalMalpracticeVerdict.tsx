@@ -140,7 +140,7 @@ const MedicalMalpracticeVerdict: React.FC = () => {
 
             <div className="mt-16">
               <Link
-                to="/news"
+                to="/about/news"
                 className="inline-flex items-center gap-2 text-law-red hover:text-white transition-colors duration-300"
               >
                 <FaArrowLeft />
