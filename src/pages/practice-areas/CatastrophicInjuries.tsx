@@ -16,7 +16,7 @@ const CatastrophicInjuries: React.FC = () => {
   const detailedContent = {
     title: "Catastrophic Injury Specialists",
     description: "Brain and spinal cord injuries have life-altering consequences that require extensive medical care and long-term support. Our catastrophic injury team combines medical knowledge with legal expertise to secure the substantial compensation needed for lifetime care, rehabilitation, and quality of life adaptations.",
-    image: "/images/brain-injury-detailed.jpg",
+    image: "/brain.jpg",
     bulletPoints: [
       "Comprehensive understanding of neurological and spinal injuries",
       "Expert life-care planning for long-term needs",

@@ -7,21 +7,21 @@ const teamMembers = [
   {
     name: "Michael Anderson",
     role: "FOUNDING PARTNER",
-    image: "/team/michael-anderson.jpg",
+    image: "/michael.jpg",
     linkedin: "https://linkedin.com",
     description: "30+ years of experience in personal injury law. Record-setting verdicts in medical malpractice."
   },
   {
     name: "Sarah Martinez",
     role: "SENIOR PARTNER",
-    image: "/team/sarah-martinez.jpg",
+    image: "/sarah.jpg",
     linkedin: "https://linkedin.com",
     description: "Specialized in catastrophic injury cases. Named Top 100 Trial Lawyers for 5 consecutive years."
   },
   {
     name: "David Thompson",
     role: "MANAGING PARTNER",
-    image: "/team/david-thompson.jpg",
+    image: "/david.jpg",
     linkedin: "https://linkedin.com",
     description: "Expert in complex litigation. Former prosecutor with extensive trial experience."
   }

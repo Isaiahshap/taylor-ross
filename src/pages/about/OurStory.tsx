@@ -28,7 +28,6 @@ const OurStory: React.FC = () => {
           subtitle="Story"
           description="From our founding in 1998 to becoming one of the state's leading personal injury firms, our commitment to fighting for justice has never wavered."
           stats={heroStats}
-          inView={inView}
         />
 
         {/* Mission Statement Section */}

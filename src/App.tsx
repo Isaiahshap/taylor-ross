@@ -31,6 +31,10 @@ import MedicalMalpracticeBlog from './pages/MedicalMalpracticeBlog';
 import TruckAccidentsBlog from './pages/TruckAccidentsBlog';
 import WorkplaceSafetyBlog from './pages/WorkplaceSafetyBlog';
 import ProductLiability from './pages/practice-areas/ProductLiability';
+import MartinezSuperLawyers from './pages/news/MartinezSuperLawyers';
+import VeteransProgram from './pages/news/VeteransProgram';
+import MedicalMalpracticeVerdict from "./pages/news/MedicalMalpracticeVerdict";
+import News from "./pages/news/News";
 
 function App() {
   return (
@@ -67,6 +71,10 @@ function App() {
         <Route path="/blog/truck-accidents" element={<TruckAccidentsBlog />} />
         <Route path="/blog/workplace-safety" element={<WorkplaceSafetyBlog />} />
         <Route path="/practice-areas/product-liability" element={<ProductLiability />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/news/medical-malpractice-verdict" element={<MedicalMalpracticeVerdict />} />
+        <Route path="/news/martinez-super-lawyers" element={<MartinezSuperLawyers />} />
+        <Route path="/news/veterans-program" element={<VeteransProgram />} />
       </Routes>
       <Footer />
     </Router>

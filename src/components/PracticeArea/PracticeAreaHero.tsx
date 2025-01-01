@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 interface PracticeAreaHeroProps {
   title: string;
@@ -43,10 +44,13 @@ const PracticeAreaHero: React.FC<PracticeAreaHeroProps> = ({
             <p className="text-xl text-white/80 max-w-xl mb-8 font-body leading-relaxed">
               {description}
             </p>
-            <button className="group flex items-center gap-3 bg-law-red px-8 py-4 text-white font-display text-xl uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300">
+            <Link
+              to="/contact"
+              className="group inline-flex items-center gap-3 bg-law-red px-8 py-4 text-white font-display text-xl uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300"
+            >
               Free Consultation
               <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
-            </button>
+            </Link>
           </motion.div>
 
           <motion.div

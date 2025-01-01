@@ -16,7 +16,7 @@ const WorkplaceInjuries: React.FC = () => {
   const detailedContent = {
     title: "Workplace Injury Specialists",
     description: "Workplace accidents can devastate both workers and their families. Our firm specializes in navigating the complex intersection of workers' compensation and personal injury law, ensuring you receive maximum compensation for your workplace injury. We understand OSHA regulations and how to build strong cases against negligent employers.",
-    image: "/images/workplace-injury-detailed.jpg",
+    image: "/injury.jpg",
     bulletPoints: [
       "Expert knowledge of workers' compensation laws and OSHA regulations",
       "Investigation of workplace safety violations and negligence",

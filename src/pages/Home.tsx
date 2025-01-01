@@ -4,7 +4,7 @@ import Hero from '../components/Hero/Hero';
 import WhyChooseUs from '../components/WhyChooseUs/WhyChooseUs';
 import ResultsAndPractice from '../components/ResultsAndPractice/ResultsAndPractice';
 import CaseEvaluation from '../components/CaseEvaluation/CaseEvaluation';
-
+import FoundingPartners from '../components/About/FoundingPartners';
 const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-black">
@@ -12,9 +12,9 @@ const Home: React.FC = () => {
       <main>
         <Hero />
         <WhyChooseUs />
+        <FoundingPartners />
         <ResultsAndPractice />
-        <CaseEvaluation />
-      </main>
+        <CaseEvaluation />      </main>
     </div>
   );
 };

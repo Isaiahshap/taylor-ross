@@ -16,7 +16,7 @@ const TruckAccidents: React.FC = () => {
   const detailedContent = {
     title: "Commercial Truck Accident Specialists",
     description: "Truck accident cases demand a deep understanding of federal regulations, industry standards, and complex liability issues. Our firm has extensive experience handling commercial vehicle accidents, from semi-trucks to delivery vans. We know how to investigate these cases thoroughly and hold all responsible parties accountable.",
-    image: "/images/truck-accident-detailed.jpg",
+    image: "/truckcrash.jpg",
     bulletPoints: [
       "Expert knowledge of Federal Motor Carrier Safety Regulations (FMCSR)",
       "Access to top accident reconstruction specialists",

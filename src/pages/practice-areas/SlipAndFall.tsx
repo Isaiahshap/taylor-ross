@@ -16,7 +16,7 @@ const SlipAndFall: React.FC = () => {
   const detailedContent = {
     title: "Premises Liability Experts",
     description: "Property owners have a legal duty to maintain safe conditions for visitors and customers. When they fail in this duty, serious injuries can occur. Our premises liability attorneys have extensive experience proving negligence in slip and fall cases, ensuring property owners are held accountable for their negligence.",
-    image: "/images/slip-and-fall-detailed.jpg",
+    image: "/slipandfall.jpg",
     bulletPoints: [
       "Thorough investigation of accident scenes and conditions",
       "Documentation of hazardous conditions and safety violations",

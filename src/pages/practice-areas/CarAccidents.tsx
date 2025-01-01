@@ -3,7 +3,6 @@ import Navbar from '../../components/Navbar/Navbar';
 import PracticeAreaHero from '../../components/PracticeArea/PracticeAreaHero';
 import DetailedContent from '../../components/PracticeArea/DetailedContent';
 import KeyInfo from '../../components/PracticeArea/KeyInfo';
-import CaseEvaluation from '../../components/CaseEvaluation/CaseEvaluation';
 
 const CarAccidents: React.FC = () => {
   const heroStats = [
@@ -16,7 +15,7 @@ const CarAccidents: React.FC = () => {
   const detailedContent = {
     title: "Expert Car Accident Attorneys Fighting For Your Rights",
     description: "Car accidents can have devastating consequences, leaving victims with serious injuries, mounting medical bills, and lost wages. At Taylor & Ross, our experienced car accident attorneys understand the physical, emotional, and financial toll these accidents take on victims and their families. We're committed to helping you recover the maximum compensation you deserve while you focus on healing.",
-    image: "/images/car-accident-detailed.jpg",
+    image: "/carcrash.jpg",
     bulletPoints: [
       "Comprehensive investigation of your accident, including gathering evidence and witness statements",
       "Expert analysis from accident reconstructionists and medical professionals",
@@ -78,8 +77,6 @@ const CarAccidents: React.FC = () => {
           description="Our comprehensive approach to car accident cases ensures no detail is overlooked and no stone is left unturned in pursuit of maximum compensation."
           items={keyInfoItems}
         />
-
-        <CaseEvaluation />
       </main>
     </div>
   );

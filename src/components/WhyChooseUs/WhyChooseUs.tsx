@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaBalanceScale, FaDollarSign, FaHandshake, FaTrophy } from 'react-icons/fa';
+import { FaBalanceScale, FaDollarSign, FaHandshake, FaTrophy, FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const features = [
   {
@@ -74,6 +75,23 @@ const WhyChooseUs: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="text-center mt-16"
+        >
+          <Link
+            to="/contact"
+            className="group inline-flex items-center gap-3 bg-law-red px-8 py-4 text-white font-display text-xl uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300"
+          >
+            Free Consultation
+            <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
+          </Link>
+        </motion.div>
+
+
       </div>
     </section>
   );

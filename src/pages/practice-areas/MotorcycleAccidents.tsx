@@ -16,7 +16,7 @@ const MotorcycleAccidents: React.FC = () => {
   const detailedContent = {
     title: "Motorcycle Accident Specialists",
     description: "Motorcycle accidents often result in devastating injuries, and riders face unique challenges in securing fair compensation. Our attorneys understand motorcycle culture, rider rights, and the complexities of these cases. We fight against bias and work tirelessly to ensure riders receive the compensation they deserve.",
-    image: "/images/motorcycle-accident-detailed.jpg",
+    image: "/motorcyclecrash.jpg",
     bulletPoints: [
       "Deep understanding of motorcycle dynamics and accident causes",
       "Experience countering anti-motorcycle bias",

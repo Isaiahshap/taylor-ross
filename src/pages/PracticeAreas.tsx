@@ -9,63 +9,56 @@ const practiceAreas = [
   {
     title: "Car Accidents",
     description: "Expert representation for victims of auto accidents, including multi-vehicle collisions, drunk driving incidents, and rideshare accidents.",
-    image: "/images/car-accident.jpg",
+    image: "/carcrash.jpg",
     link: "/practice-areas/car-accidents",
     stats: ["$15.5M Highest Settlement", "98% Success Rate", "2,500+ Cases Won"]
   },
   {
     title: "Truck Accidents",
     description: "Specialized handling of commercial truck accidents, dealing with complex regulations and multiple liable parties.",
-    image: "/images/truck-accident.jpg",
+    image: "/truckcrash.jpg",
     link: "/practice-areas/truck-accidents",
     stats: ["$12.8M Highest Settlement", "25+ Years Experience", "Federal Regulation Experts"]
   },
   {
     title: "Medical Malpractice",
     description: "Fighting for victims of medical negligence, including surgical errors, misdiagnosis, and medication mistakes.",
-    image: "/images/medical-malpractice.jpg",
+    image: "/malpractice.jpg",
     link: "/practice-areas/medical-malpractice",
     stats: ["$18.2M Highest Settlement", "300+ Healthcare Cases", "Expert Medical Network"]
   },
   {
     title: "Workplace Injuries",
     description: "Protecting workers' rights in construction accidents, industrial injuries, and occupational illness cases.",
-    image: "/images/workplace-injury.jpg",
+    image: "/injury.jpg",
     link: "/practice-areas/workplace-injuries",
     stats: ["$9.5M Highest Settlement", "1,000+ Workers Helped", "OSHA Compliance Experts"]
   },
   {
-    title: "Slip & Fall",
-    description: "Representing victims of premises liability incidents, ensuring property owners are held accountable.",
-    image: "/images/slip-and-fall.jpg",
-    link: "/practice-areas/slip-and-fall",
-    stats: ["$4.2M Highest Settlement", "95% Success Rate", "Fast Resolution Focus"]
-  },
-  {
     title: "Product Liability",
     description: "Taking on manufacturers of defective products that cause injury or harm to consumers.",
-    image: "/images/product-liability.jpg",
+    image: "/productliability.jpg",
     link: "/practice-areas/product-liability",
     stats: ["$11.3M Highest Settlement", "National Cases Handled", "Industry-Leading Experts"]
   },
   {
     title: "Wrongful Death",
     description: "Compassionate representation for families who have lost loved ones due to negligence or misconduct.",
-    image: "/images/wrongful-death.jpg",
+    image: "/wrongfuldeath.jpg",
     link: "/practice-areas/wrongful-death",
     stats: ["$21.5M Highest Settlement", "100+ Families Helped", "Dedicated Support Team"]
   },
   {
     title: "Motorcycle Accidents",
     description: "Specialized advocacy for motorcycle riders, understanding their unique challenges and rights.",
-    image: "/images/motorcycle-accident.jpg",
+    image: "/motorcyclecrash.jpg",
     link: "/practice-areas/motorcycle-accidents",
     stats: ["$8.7M Highest Settlement", "500+ Riders Helped", "Biker Rights Advocates"]
   },
   {
     title: "Brain & Spinal Injuries",
     description: "Expert handling of catastrophic injuries requiring long-term care and substantial compensation.",
-    image: "/images/brain-injury.jpg",
+    image: "/brain.jpg",
     link: "/practice-areas/catastrophic-injuries",
     stats: ["$25.1M Highest Settlement", "Life-Care Planning", "Medical Expert Network"]
   }

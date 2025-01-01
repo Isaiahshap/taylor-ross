@@ -16,7 +16,7 @@ const MedicalMalpractice: React.FC = () => {
   const detailedContent = {
     title: "Fighting Against Medical Negligence",
     description: "Medical malpractice cases are among the most complex areas of personal injury law. At Taylor & Ross, we combine our legal expertise with a network of medical professionals to build powerful cases against healthcare providers who have breached their duty of care. Our track record of success in medical malpractice cases speaks to our ability to handle these challenging claims.",
-    image: "/images/medical-malpractice-detailed.jpg",
+    image: "/malpractice.jpg",
     bulletPoints: [
       "Comprehensive review of medical records by expert physicians",
       "Access to leading medical experts for case evaluation and testimony",

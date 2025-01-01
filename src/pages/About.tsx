@@ -22,25 +22,25 @@ const About: React.FC = () => {
     {
       title: "Our Story",
       description: "Learn about our firm's 25-year journey fighting for justice and our commitment to excellence.",
-      image: "/about/our-story.jpg",
+      image: "/logo.png",
       link: "/about/our-story"
     },
     {
       title: "Our Attorneys",
       description: "Meet our team of award-winning trial lawyers dedicated to securing life-changing results.",
-      image: "/about/attorneys.jpg",
+      image: "/michaelross.jpg",
       link: "/about/attorneys"
     },
     {
       title: "Community Impact",
       description: "Discover how we give back and make a difference in our local community.",
-      image: "/about/community.jpg",
+      image: "/community.jpg",
       link: "/about/community"
     },
     {
       title: "News & Media",
       description: "Stay updated with our latest news, press releases, and media coverage.",
-      image: "/about/news.jpg",
+      image: "/news.jpg",
       link: "/about/news"
     }
   ];
@@ -54,7 +54,6 @@ const About: React.FC = () => {
           subtitle="Our Firm"
           description="For over 25 years, we've been fighting relentlessly for injury victims across the state, building a reputation for excellence and dedication to our clients."
           stats={heroStats}
-          inView={inView}
         />
         
         <section className="relative py-24 bg-black" ref={ref}>

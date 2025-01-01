@@ -16,7 +16,7 @@ const WrongfulDeath: React.FC = () => {
   const detailedContent = {
     title: "Compassionate Wrongful Death Representation",
     description: "Losing a loved one due to someone else's negligence is devastating. Our wrongful death attorneys provide compassionate yet aggressive representation to help families seek justice and secure their financial future. We handle all legal aspects of your case so you can focus on healing.",
-    image: "/images/wrongful-death-detailed.jpg",
+    image: "/wrongfuldeath.jpg",
     bulletPoints: [
       "Thorough investigation of circumstances leading to death",
       "Expert analysis to establish liability and damages",

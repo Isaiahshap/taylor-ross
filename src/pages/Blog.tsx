@@ -4,6 +4,9 @@ import { useInView } from 'react-intersection-observer';
 import { Link, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import { FaCalendar, FaUser, FaFolder, FaArrowRight } from 'react-icons/fa';
+import MedicalMalpracticeBlog from './MedicalMalpracticeBlog';
+import TruckAccidentsBlog from './TruckAccidentsBlog';
+import WorkplaceSafetyBlog from './WorkplaceSafetyBlog';
 
 // Mock WordPress API response
 const blogPosts = [
@@ -248,6 +251,9 @@ const Blog: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<BlogList />} />
+      <Route path="/understanding-medical-malpractice-claims" element={<MedicalMalpracticeBlog />} />
+      <Route path="/truck-accident-settlements" element={<TruckAccidentsBlog />} />
+      <Route path="/workplace-safety-post-covid" element={<WorkplaceSafetyBlog />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

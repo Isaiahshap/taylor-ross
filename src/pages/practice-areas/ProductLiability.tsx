@@ -16,7 +16,7 @@ const ProductLiability: React.FC = () => {
   const detailedContent = {
     title: "Fighting Against Dangerous Products",
     description: "When manufacturers put profits over safety, consumers pay the price. Our product liability attorneys have the expertise and resources to take on major corporations and hold them accountable for dangerous and defective products. We work with leading industry experts to prove liability and secure maximum compensation for our clients.",
-    image: "/images/product-liability-detailed.jpg",
+    image: "/productliability.jpg",
     bulletPoints: [
       "Comprehensive investigation of product defects",
       "Expert analysis from engineering and safety specialists",
