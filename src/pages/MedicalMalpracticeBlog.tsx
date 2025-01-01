@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import Navbar from '../components/Navbar/Navbar';
-import { FaCalendar, FaUser, FaFolder, FaArrowLeft, FaShare, FaChartLine, FaGavel, FaClock } from 'react-icons/fa';
+import { FaCalendar, FaUser, FaArrowLeft, FaShare, FaChartLine, FaGavel, FaClock } from 'react-icons/fa';
 import CaseEvaluation from '../components/CaseEvaluation/CaseEvaluation';
+import { useInView } from 'react-intersection-observer';
 
 const MedicalMalpracticeBlog: React.FC = () => {
   const [ref, inView] = useInView({

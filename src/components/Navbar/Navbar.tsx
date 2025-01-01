@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaPhone, FaArrowRight } from 'react-icons/fa';
 import NavDropdown from './NavDropdown';

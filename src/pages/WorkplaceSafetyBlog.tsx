@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Navbar from '../components/Navbar/Navbar';
-import { FaCalendar, FaUser, FaFolder, FaArrowLeft, FaShare, FaShieldAlt, FaChartLine, FaClock } from 'react-icons/fa';
+import { FaCalendar, FaUser, FaArrowLeft, FaShare, FaShieldAlt, FaChartLine, FaClock } from 'react-icons/fa';
 import CaseEvaluation from '../components/CaseEvaluation/CaseEvaluation';
 
 const WorkplaceSafetyBlog: React.FC = () => {

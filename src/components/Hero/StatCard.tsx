@@ -10,8 +10,6 @@ interface StatCardProps {
 const StatCard: React.FC<StatCardProps> = ({ number, label, delay }) => {
   return (
     <motion.div
-      ref={ref}
-      animate={controls}
       initial="hidden"
       variants={{
         hidden: { opacity: 0, y: 20 },

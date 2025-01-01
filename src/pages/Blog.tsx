@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
-import { FaCalendar, FaUser, FaFolder, FaArrowRight } from 'react-icons/fa';
+import { FaCalendar, FaUser, FaArrowRight } from 'react-icons/fa';
 import MedicalMalpracticeBlog from './MedicalMalpracticeBlog';
 import TruckAccidentsBlog from './TruckAccidentsBlog';
 import WorkplaceSafetyBlog from './WorkplaceSafetyBlog';

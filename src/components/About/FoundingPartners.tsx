@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaUniversity, FaGavel, FaHandshake, FaBalanceScale, FaTrophy, FaArrowRight } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaUniversity, FaGavel, FaHandshake, FaBalanceScale, FaTrophy } from 'react-icons/fa';
 
 const milestones = [
   {

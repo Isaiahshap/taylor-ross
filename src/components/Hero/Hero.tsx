@@ -100,7 +100,6 @@ const Hero: React.FC = () => {
                     amount={result.amount}
                     type={result.type}
                     delay={result.delay}
-                    isMobile={true}
                   />
                 </Link>
               ))}
@@ -125,7 +124,6 @@ const Hero: React.FC = () => {
                     amount={result.amount}
                     type={result.type}
                     delay={result.delay}
-                    isMobile={false}
                   />
                 </Link>
               ))}

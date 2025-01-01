@@ -7,7 +7,7 @@ import { FaCalendar, FaUser, FaFolder, FaArrowLeft } from 'react-icons/fa';
 import CaseEvaluation from '../components/CaseEvaluation/CaseEvaluation';
 
 const TruckAccidentsBlog: React.FC = () => {
-  const [ref, inView] = useInView({
+  const [, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   });

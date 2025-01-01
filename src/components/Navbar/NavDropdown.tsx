@@ -79,7 +79,7 @@ const NavDropdown: React.FC<NavDropdownProps> = ({
             className={`absolute top-[calc(100%+1rem)] -left-44 w-[${width}] bg-black/95 backdrop-blur-md border border-white/10 shadow-2xl overflow-hidden`}
           >
             <div className={`p-6 ${layout === 'grid' ? 'grid grid-cols-2 gap-2' : ''}`}>
-              {items.map((item, index) => (
+              {items.map((item) => (
                 <motion.div
                   key={item.title}
                   variants={itemVariants}
