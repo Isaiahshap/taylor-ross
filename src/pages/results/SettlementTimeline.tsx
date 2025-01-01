@@ -1,13 +1,11 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { FaClock, FaBalanceScale, FaGavel, FaChartLine } from 'react-icons/fa';
 import Navbar from '../../components/Navbar/Navbar';
 import ResultsHero from '../../components/Results/ResultsHero';
 import VictoryCard from '../../components/Results/VictoryCard';
 import StatsCard from '../../components/Results/StatsCard';
 import CaseEvaluation from '../../components/CaseEvaluation/CaseEvaluation';
 import ResultsContent from '../../components/Results/ResultsContent';
-import { motion } from 'framer-motion';
 
 const SettlementTimeline: React.FC = () => {
   const [ref, inView] = useInView({

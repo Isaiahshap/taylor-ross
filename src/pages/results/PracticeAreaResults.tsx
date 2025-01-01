@@ -8,7 +8,6 @@ import PracticeAreaStats from '../../components/Results/PracticeAreaStats';
 import StatsCard from '../../components/Results/StatsCard';
 import CaseEvaluation from '../../components/CaseEvaluation/CaseEvaluation';
 import ResultsContent from '../../components/Results/ResultsContent';
-import { motion } from 'framer-motion';
 
 const PracticeAreaResults: React.FC = () => {
   const [ref, inView] = useInView({
